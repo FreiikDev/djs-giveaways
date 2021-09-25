@@ -1,15 +1,22 @@
 {
   "name": "djs-giveaways",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Make your discord giveaways with this module. Made for DJS 13 & newer.",
   "main": "index.js",
   "author": "Freiik",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "latest"
+    "discord.js": ">=13.0.0"
+  },
+  "typings": "./index.d.js",
+  "engines": {
+    "node": ">=10.4.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/FreiikDev/djs-giveaways"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.3"
   }
 }

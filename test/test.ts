@@ -1,12 +1,15 @@
-const {Client} = require("discord.js"),
-    {Manager} = require("../index.js"),
-    ms = require("ms"), // Install ms: `npm i ms`
-    {join} = require("path"),
-    client = new Client({intents: 513}),
-    Giveaway = new Manager(client, {storage: join(__dirname, "/storage.json"), updateCountdownEvery: 2000}),
+import {Client} from "discord.js";
+// @ts-ignore
+import {Manager} from "../index.d.js";
+import ms from "ms"; // Install ms: `npm i ms`
+import {join} from "path";
+
+const client = new Client({intents: 513}),
+    Giveaway = new Manager(client, {storage: join(__dirname, "/storage.json"), updateInterval: 2000}),
     prefix = ",";
 
 client.on("ready", () => {
+    // @ts-ignore
     console.log(`${client.user.tag} connected to Discord!`)
 });
 
@@ -18,15 +21,19 @@ client.on("messageCreate", message => {
 
     if (cmd === 'start') Giveaway.create(message, {
         winnerCount: Number(args[1]),
+        // @ts-ignore
         time: ms(args[2]),
         prize: args.slice(3).join(" ")
-    }).then(c => console.log(c.id))
+    }).then((c: { id: any; }) => console.log(c.id));
+
+
 
     // Example with all data that you can edit
 
     if (cmd === 'start-full') {
         Giveaway.create(message, {
             winnerCount: Number(args[1]),
+            // @ts-ignore
             time: ms(args[2]),
             prize: args.slice(3).join(" "),
             button: "Participe",
@@ -54,7 +61,7 @@ client.on("messageCreate", message => {
                     "timestamp": message.createdAt
                 }
             }
-        }).then(c => console.log(c.id));
+        }).then((c: { id: any; }) => console.log(c.id));
     }
 
     if (cmd === 'stop') Giveaway.stop(args[1]);

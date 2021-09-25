@@ -14,14 +14,15 @@
   </a>
   </br>
   </br>
-  <b>Make your discord giveaways with this module.</b>
+  <b>Make your own discord giveaways</b>
 </p>
 
 ### Informations
 
 - Can be used on Discord.JS v13 and newer 🤓
-- Fully customizable and simple to use _\*(progress bar available)\*_ 😎
-- Can `start`, `reroll`, `stop` or `delete` giveaways 🎉
+- TypeScript/NodeJS supported 🤠
+- Fully customizable and simple to use : add a blacklist for roles/users, personalize the button text or all the message of giveaway _\*(progress bar available)\*_ 😎
+- Can `start`, `reroll`, `stop` or `delete` giveaways on a storage file 🎉
 - Special events `giveawayCreated`, `giveawayRerolled`, `giveawayEnded`, `giveawayDeleted` 🫂
 
 ### Example of importation
@@ -32,7 +33,7 @@ const {Client} = require("discord.js"), // Import Discord.js
     client = new Client({intents: 513}), // Start the instance of a Discord Client with GUILDS & GUILDS_MESSAGES intents
     Giveaway = new Manager(client, {
         storage: require("path").join(__dirname, "storage.json"), // Import Storage, you must have a json file with contains a array "[]"
-        updateCountdownEvery: 10000 // Not required, the default value is 30000 (ms)
+        updateInterval: 10000 // Not required, the default value is 30000 (ms)
     });
 
 client.on("ready", () => {
