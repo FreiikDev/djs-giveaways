@@ -214,6 +214,7 @@ export class Manager {
                 }
             }
             data.content = content;
+            message.author = message.user ? message.user : message.author;
             if (data.content.embed.author)
                 data.content.embed.author = {
                     name: message.author.tag,

@@ -20,6 +20,7 @@
 ### Informations
 
 - Can be used on Discord.JS v13 and newer 🤓
+- Possible use of interactions 🤙
 - TypeScript/NodeJS supported 🤠
 - Fully customizable and simple to use : add a blacklist for roles/users, personalize the button text or all the message of giveaway _\*(progress bar available)\*_ 😎
 - Can `start`, `reroll`, `stop` or `delete` giveaways on a storage file 🎉
@@ -84,4 +85,4 @@ Giveaway.delete(id); // Delete a giveaway, you can provide the Giveaway ID or th
 ```
 
 ### Credits
-- [Mw3y](https://github.com/Mw3y/), for this [Text-ProgressBar](https://github.com/Mw3y/Text-ProgressBar)
+- [Mw3y](https://github.com/Mw3y/), for his [Text-ProgressBar](https://github.com/Mw3y/Text-ProgressBar)
