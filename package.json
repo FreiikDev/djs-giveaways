@@ -1,6 +1,6 @@
 {
   "name": "djs-giveaways",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Make your discord giveaways with this module. Made for DJS 13 & newer.",
   "main": "index.js",
   "author": "Freiik",
@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "typescript": "^4.4.3"
-  }
+  },
+  "publishConfig": {
+  "registry":"https://npm.pkg.github.com"
+}
 }

@@ -44,12 +44,13 @@ module.exports = class Manager {
                 if (interaction.member.roles.cache.find((r) => giveaway.blockedRoles.includes(r.id)) || giveaway.blockedUsers.includes(interaction.user.id))
                     return;
                 if (giveaway.participations.includes(interaction.user.id)) {
+                    giveaway.participations = giveaway.participations.filter(x => x !== interaction.user.id);
                     interaction.reply({content: giveaway.data.content.removeParticipate, ephemeral: true});
                 } else {
                     giveaway.participations.push(interaction.user.id);
                     interaction.reply({content: giveaway.data.content.participate, ephemeral: true});
-                    this.saveStorage();
                 }
+                this.saveStorage();
             }
         });
         this.client.on("ready", () => {
